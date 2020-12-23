@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multi.html</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        width: 150px;
+    }
+</style>
+
+<body>
+    <h3>2.โปรแกรม สูตรคูณ - multi.html</h3>
+
+    <script>
+        function multi(a) {
+            p = document.getElementById('disp');
+            p.innerHTML = "สูตรคูณแม่" + " " + a;
+            for (i = 1; i <= 12; i++) {
+
+                p.innerHTML += "<table>" + "<th>" + a + "</th>" +
+                    "<th>" + " x " + "</th>" +
+                    "<th>" + i + "</th>" +
+                    "<th>" + " = " + "</th>" +
+                    "<th>" + (a * i) + "</th>" +
+                    "</tr></table>";
+            }
+        }  
+    </script>
+
+    <input type="text" placeholder="สูตรคูณแม่ X" onkeyup="multi(this.value);">
+
+    <p id="disp"></p>
+
+
+
+</body>
+
+</html>
