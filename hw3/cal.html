@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal.html</title>
+</head>
+
+<body>
+    <h3>3.โปรแกรมเครื่องคิดเลข - cal.html</h3>
+
+    <script>
+
+        function cc() {
+            var int1 = document.getElementById("input1").value;
+            var int2 = document.getElementById("input2").value;
+            var n1 = parseInt(int1);
+            var n2 = parseInt(int2);
+            var op = document.getElementById("opr").value;
+
+            if ((isNaN(n1)) || (isNaN(n2))) {
+                document.getElementById("show").setAttribute("color", "red");
+                show.innerHTML = "ERRER"
+            }
+            else {
+                if (op == "+")
+                    s = n1 + n2;
+                else if (op == "-")
+                    s = n1 - n2;
+                else if (op == "*")
+                    s = n1 * n2;
+                else if (op == "/")
+                    s = n1 / n2;
+                document.getElementById("show").setAttribute("color", "green");
+                show.innerHTML = s
+            }
+        }
+    </script>
+
+    </head>
+
+    <body>
+
+        <input id="input1" name="input1" size="5" />
+
+        <select name="opr" id="opr">
+            <option value=""></option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input id="input2" name="input2" size="5" />
+        <button onclick="javascript: cc();">=</button><br>
+        <font id="show" color=""></font>
+
+    </body>
+
+</html>
