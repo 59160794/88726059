@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello.html</title>
+</head>
+
+<body>
+    <h3>1. โปรแกรม ทักทาย - hello.html</h3>
+    
+    <input type="text" name="users" id="users" onkeyup="myFunction()">
+    
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            
+            var x = document.getElementById("users").value;
+            document.getElementById("demo").innerHTML ="Hello "+ x;
+        }
+    </script>
+</body>
+
+</html>
