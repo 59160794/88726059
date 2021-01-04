@@ -4,36 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>multi.html</title>
+    <title>randCount.html</title>
 </head>
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        width: 150px;
+<script>
+    html = "";
+
+    function myFunction(value, key) {
+        console.log(key + ' - ' + value);
+        html += "<tr align='center'>";
+        html += "<td>" + key + "</td>";
+        html += "<td>" + value + "</td>";
+        html += "</tr>";
     }
-</style>
+
+    function randCount() {
+        num = parseInt(document.getElementById('num').value);
+        r = [];
+        for (i = 0; i < num; i++) {
+            rn = Math.floor(Math.random() * 100);
+            if (r[rn] == null) {
+                r[rn] = 0;
+            }
+            r[rn]++;
+        }
+        console.clear();
+        console.log(i)
+        html = "<table border>";
+        html += "<tr><th>ตัวเลข</th>";
+        html += "<th>ถูกสุ่ม(ครั้ง)</th></tr>";
+        r.forEach(myFunction);
+        html += "</table>";
+        document.getElementById("disp").innerHTML = html;
+    }
+</script>
+
 <body>
     <h3>5.โปรแกรมสุ่มเลข - multi.html</h3>
-    <script>
-        function multi(a) {
-            p = document.getElementById('disp');
-            p.innerHTML = "สูตรคูณแม่" + " " + a;
-            for (i = 1; i <= a; i++) {
-
-                p.innerHTML += "<table>" + 
-                    "<th>" + a + "</th>" +
-                    "<th>" + " x " + "</th>" +
-                    "</tr></table>";
-            }
-        }  
-    </script>
-    
-     <input type="text" placeholder="กรุณาใส่เลข" onkeyup="multi(this.value);">
-     <button onclick="summary()">สุ่ม</button>
-     <p id="disp"></p>
-     
+    <input type="text" id="num">
+    <button onclick="randCount();">สู่ม</button>
+    <div id="disp"></div>
 </body>
 
 </html>
