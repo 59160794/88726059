@@ -9,19 +9,36 @@
 
 <body>
     <h2>เกมทายตัวเลข</h2>
-    <input type="number" name="anwser" id="anwser" onkeyup="guess(event)">
+    <input type="number" name="answer" id="answer" onkeyup="guess(event)">
     <button onclick="guess()">ลองทาย</button>
+    <p id="resultList"></p>
     <script>
         var randomNumber = Math.floor(Math.random() * 10);
+        var answerList = []
+        var tagP = "<p>${value}</p>"
         console.log(randomNumber)
 
         function guess(event) {
+            var resultList = ""
+            var answer = document.getElementById("answer").value
+
             if (event !== undefined) {
                 if (event.keyCode === 13) {
                     console.log("Yor enter")
+                    answerList.push(answer)
                 }
             } else {
                 console.log("Yor click")
+                answerList.push(answer)
+            }
+
+            console.log(answerList)
+            if (answerList.length > 0) {
+                resultList += "<h4>ตัวเลขที่เคยทายไปแล้ว</h4>"
+                answerList.forEach(value => {
+                    resultList += tagP.replace("${value}", value)
+                })
+                document.getElementById("resultList").innerHTML = resultList
             }
         }
     </script>
