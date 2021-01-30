@@ -49,6 +49,8 @@
             var result = ""
             if (answer > randomNumber) {
                 result = tagP.replace("${value}", "มากไป")
+            } else if (answer < randomNumber) {
+                result = tagP.replace("${value}", "น้อยไป")
             }
             document.getElementById("result").innerHTML = result
         }
