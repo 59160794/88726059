@@ -11,6 +11,7 @@
     <h2>เกมทายตัวเลข</h2>
     <input type="number" name="answer" id="answer" onkeyup="guess(event)">
     <button onclick="guess()">ลองทาย</button>
+    <p id="result"></p>
     <p id="resultList"></p>
     <script>
         var randomNumber = Math.floor(Math.random() * 10);
@@ -26,10 +27,12 @@
                 if (event.keyCode === 13) {
                     console.log("Yor enter")
                     answerList.push(answer)
+                    getMessage(answer)
                 }
             } else {
                 console.log("Yor click")
                 answerList.push(answer)
+                getMessage(answer)
             }
 
             console.log(answerList)
@@ -40,6 +43,14 @@
                 })
                 document.getElementById("resultList").innerHTML = resultList
             }
+        }
+
+        function getMessage(answer) {
+            var result = ""
+            if (answer > randomNumber) {
+                result = tagP.replace("${value}", "มากไป")
+            }
+            document.getElementById("result").innerHTML = result
         }
     </script>
 </body>
