@@ -51,6 +51,8 @@
                 result = tagP.replace("${value}", "มากไป")
             } else if (answer < randomNumber) {
                 result = tagP.replace("${value}", "น้อยไป")
+            } else if (answer == randomNumber) {
+                result = tagP.replace("${value}", "ถูกต้อง")
             }
             document.getElementById("result").innerHTML = result
         }
