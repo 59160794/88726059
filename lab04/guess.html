@@ -9,10 +9,21 @@
 
 <body>
     <h2>เกมทายตัวเลข</h2>
-
+    <input type="number" name="anwser" id="anwser" onkeyup="guess(event)">
+    <button onclick="guess()">ลองทาย</button>
     <script>
         var randomNumber = Math.floor(Math.random() * 10);
         console.log(randomNumber)
+
+        function guess(event) {
+            if (event !== undefined) {
+                if (event.keyCode === 13) {
+                    console.log("Yor enter")
+                }
+            } else {
+                console.log("Yor click")
+            }
+        }
     </script>
 </body>
 
