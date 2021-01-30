@@ -5,15 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>guess</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
-    <h2>เกมทายตัวเลข</h2>
-    <input type="number" name="answer" id="answer" onkeyup="guess(event)">
-    <button onclick="guess()">ลองทาย</button>
-    <button onclick="reset()">เริ่มเล่นใหม่</button>
-    <p id="result"></p>
-    <p id="resultList"></p>
+    <div class="container">
+        <h2>เกมทายตัวเลข</h2>
+        <div class="row">
+            <div class="form-group row">
+                <div class="col-4">
+                    <input type="number" name="answer" id="answer" class="form-control" onkeyup="guess(event)">
+                </div>
+                <div class="col-1">
+                    <button onclick="guess()" class="btn btn-success">ลองทาย</button>
+                </div>
+                <div class="col-2">
+                    <button onclick="reset()" class="btn btn-warning">เริ่มเล่นใหม่</button>
+                </div>
+            </div>
+        </div>
+        <p id="result"></p>
+        <p id="resultList"></p>
+    </div>
+
     <script>
         var randomNumber = Math.floor(Math.random() * 10)
         var answerList = []
