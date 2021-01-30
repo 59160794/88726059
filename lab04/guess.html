@@ -11,10 +11,11 @@
     <h2>เกมทายตัวเลข</h2>
     <input type="number" name="answer" id="answer" onkeyup="guess(event)">
     <button onclick="guess()">ลองทาย</button>
+    <button onclick="reset()">เริ่มเล่นใหม่</button>
     <p id="result"></p>
     <p id="resultList"></p>
     <script>
-        var randomNumber = Math.floor(Math.random() * 10);
+        var randomNumber = Math.floor(Math.random() * 10)
         var answerList = []
         var tagP = "<p>${value}</p>"
         console.log(randomNumber)
@@ -55,6 +56,15 @@
                 result = tagP.replace("${value}", "ถูกต้อง")
             }
             document.getElementById("result").innerHTML = result
+        }
+
+        function reset() {
+            randomNumber = Math.floor(Math.random() * 10)
+            answerList = []
+            document.getElementById("answer").value = ""
+            document.getElementById("result").innerHTML = "<p id='result'></p>"
+            document.getElementById("resultList").innerHTML = "<p id='resultList'></p>"
+            console.log(randomNumber)
         }
     </script>
 </body>
